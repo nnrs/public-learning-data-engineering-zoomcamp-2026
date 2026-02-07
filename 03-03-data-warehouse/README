@@ -99,3 +99,14 @@ Answer: GCP Bucket
 It is best practice in Big Query to always cluster your data:
 
 Answer: False
+
+9. Question 9. Understanding table scans
+
+```sql
+select count(*) from `nytaxi.nycity_taxi_yellow_non_partitioned`;
+select count(*) from `nytaxi.nycity_taxi_yellow_partitioned_clustered`
+```
+
+Answer:  0 B. 
+
+BigQuery can retrieve this information from the stored metadata without needing to scan the actual data in the table's storage. 
